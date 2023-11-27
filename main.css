@@ -1,0 +1,32 @@
+#develop {
+    margin: 0 auto;
+}
+.modalhead-left {
+    width : 90%;
+    float: left;
+}
+.modalhead-right {
+    width : 10%;
+    float: left;
+    
+}
+.mheadfooter {
+    clear: both;
+}
+.modalbody-left {
+    width : 40%;
+    float: left;
+    
+}
+.modalbody-right {
+    width : 60%;
+    float: left;
+    
+}
+.mheadfooter {
+    clear: both;
+}
+.modal-img {
+    width : 100px;
+    height : 100px;
+}
