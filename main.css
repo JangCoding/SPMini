@@ -1,37 +1,43 @@
-
 #developblog {
     margin: 0 auto;
 }
+
 .modalhead-left {
-    width : 90%;
+    width: 90%;
     float: left;
 }
+
 .modalhead-right {
-    width : 10%;
+    width: 10%;
     float: left;
-    
+
 }
+
 .mheadfooter {
     clear: both;
 }
+
 .modalbody-left {
-    width : 40%;
+    width: 40%;
     float: left;
-    
+
 }
 
 .modalbody-right {
-    width : 60%;
+    width: 60%;
     float: left;
-    
+
 }
+
 .mheadfooter {
     clear: both;
 }
+
 .modal-img {
-    width : 100px;
-    height : 100px;
+    width: 100px;
+    height: 100px;
 }
+
 .postbox {
     background-color: aqua;
     width: 500px;
@@ -39,15 +45,19 @@
     padding: 20px;
     box-shadow: 0px 0px 3px 0px black;
 }
+
 .none {
     display: none;
 }
+
 .show {
     display: block;
 }
+
 .flex {
     display: flex;
 }
+
 .modalBackground {
     /*모달 배경*/
     width: 100%;
@@ -56,5 +66,10 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 5;
     padding: 30px;
-    
+
+}
+
+#empty_div {
+    display: flex;
+    justify-content: center;
 }
