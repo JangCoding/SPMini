@@ -143,12 +143,6 @@
     </div>
 
 
-
-
-
-
-
-
     <div class="modal modalBackground" id="behindModify" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -232,13 +226,6 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg> -->
                         <img class = "cd_view_img" src="img/Ken.png" width="100%" height="225" style="border-radius: 5px 5px 0px 0px" />
                         <div class="card-body">
                             <p class="cd_view_comment card-text">
@@ -259,13 +246,6 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg> -->
                         <img class = "cd_view_img" src="img/Ken.png" width="100%" height="225" style="border-radius: 5px 5px 0px 0px" />
                         <div class="card-body">
                             <p class="cd_view_comment card-text">
@@ -340,21 +320,6 @@
         </div>
     </div>
 
-    <!--
-    <div id="modal" class="modal-overlay">
-    <div class="modal-window">
-        <div class="title">
-            <h2>모달</h2>
-        </div>
-        <div class="close-area">X</div>
-        <div class="content">
-            <p>가나다라마바사 아자차카타파하</p>
-            <p>가나다라마바사 아자차카타파하</p>
-            <p>가나다라마바사 아자차카타파하</p>
-            <p>가나다라마바사 아자차카타파하</p>    
-        </div>
-    </div>
-    -->
 
     <script type="module" id="jjh_script">
         // Firebase SDK 라이브러리 가져오기
@@ -383,6 +348,20 @@
         // Firebase 인스턴스 초기화
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
+
+
+
+        //페이지 로드 시 실행
+        //팀원, 개발 후기 카드 불러오기
+        let docs = await getDocs(collection(db, "Teammates"));
+        let i_row = docs.docs;
+        $('.cd_view_img').each(function(index){
+            $(this).attr('src', i_row[index].data().img);
+        });
+        $('.cd_view_comment').each(function(index){
+            $(this).text("["+i_row[index].data().name+"]"+ i_row[index].data().comment);
+        });
+        
 
 
         $('#mainbtn').click(async function () {
@@ -414,20 +393,7 @@
             $('#teammate_div').fadeOut();
 
             $('#behind_div').fadeIn();
-        });
-
-        //페이지 로드 시 팀원, 개발 후기 카드 불러오기
-        let docs = await getDocs(collection(db, "Teammates"));
-        let i_row = docs.docs;
-        $('.cd_view_img').each(function(index){
-            $(this).attr('src', i_row[index].data().img);
-        });
-        $('.cd_view_comment').each(function(index){
-            $(this).text("["+i_row[index].data().name+"]"+ i_row[index].data().comment);
-        });
-        
-
-                
+        }); 
 
         // 개별 팀원 정보 가져오기 GET 방식
         async function getTeammateById(mateId) {
@@ -599,18 +565,7 @@
         });
         $('.btn-close').on('click', function () {
             $('#behindModify').removeClass('d-block');
-        });
-        /*
-        let mateImage = $('#mateImage ').val();
-        let mateName = $('#mateName').val();
-        let mateAge = $('#mateAge').val();
-        let mateMBTI = $('#mateMBTI').val();
-        let mateAddress = $('#mateAddress ').val();
-        let mateGoods = $('#mateGoods').val();
-        let mateWork= $('#mateWork').val();
-        let mateBlog = $('#mateBlog').val();
-        let mateSelfIntro= $('#mateSelfIntro').val();
-        */
+        }); 
     </script>
 </body>
 
