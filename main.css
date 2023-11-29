@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #developblog {
     margin: 0 auto;
 }
@@ -57,3 +58,44 @@
     padding: 30px;
     
 }
+=======
+#develop {
+    margin: 0 auto;
+}
+.modalhead-left {
+    width : 90%;
+    float: left;
+}
+.modalhead-right {
+    width : 10%;
+    float: left;
+    
+}
+.mheadfooter {
+    clear: both;
+}
+.modalbody-left {
+    width : 40%;
+    float: left;
+    
+}
+.modalbody-right {
+    width : 60%;
+    float: left;
+    
+}
+.mheadfooter {
+    clear: both;
+}
+.modal-img {
+    width : 100px;
+    height : 100px;
+}
+.postbox {
+    background-color: aqua;
+    width: 500px;
+    margin : 30px auto 30px auto;
+    padding : 20px;
+    box-shadow: 0px 0px 3px 0px black;
+}
+>>>>>>> 67e404ab559eacde5af4eb477c2562956d192c04
